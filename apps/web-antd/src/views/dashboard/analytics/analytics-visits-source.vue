@@ -24,11 +24,12 @@ onMounted(() => {
         avoidLabelOverlap: false,
         color: ['#5ab1ef', '#b6a2de', '#67e0e3', '#2ec7c9'],
         data: [
-          { name: '搜索引擎', value: 1048 },
-          { name: '直接访问', value: 735 },
-          { name: '邮件营销', value: 580 },
-          { name: '联盟广告', value: 484 },
+          { name: '作文批改', value: 1048 },
+          { name: '词汇背诵', value: 735 },
+          { name: '真题阅读', value: 580 },
+          { name: '听力磨耳朵', value: 484 },
         ],
+        name:'学习时长分布',
         emphasis: {
           label: {
             fontSize: '12',

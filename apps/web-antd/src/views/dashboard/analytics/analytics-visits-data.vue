@@ -12,31 +12,31 @@ onMounted(() => {
   renderEcharts({
     legend: {
       bottom: 0,
-      data: ['访问', '趋势'],
+      data: ['目标水平', '当前水平'],
     },
     radar: {
       indicator: [
         {
-          name: '网页',
+          name: '词汇储备',
         },
         {
-          name: '移动端',
+          name: '语法运用',
         },
         {
-          name: 'Ipad',
+          name: '听力理解',
         },
         {
-          name: '客户端',
+          name: '阅读速度',
         },
         {
-          name: '第三方',
+          name: '写作逻辑',
         },
         {
-          name: '其它',
+          name: '口语流利',
         },
       ],
       radius: '60%',
-      splitNumber: 8,
+      splitNumber:5,
     },
     series: [
       {
@@ -52,15 +52,15 @@ onMounted(() => {
             itemStyle: {
               color: '#b6a2de',
             },
-            name: '访问',
-            value: [90, 50, 86, 40, 50, 20],
+            name: '目标水平',
+            value: [95, 90, 95, 90, 90, 85],
           },
           {
             itemStyle: {
               color: '#5ab1ef',
             },
-            name: '趋势',
-            value: [70, 75, 70, 76, 20, 85],
+            name: '当前水平',
+            value: [85, 72, 90, 65, 80, 55],
           },
         ],
         itemStyle: {

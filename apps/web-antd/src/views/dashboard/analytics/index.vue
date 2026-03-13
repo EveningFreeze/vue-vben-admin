@@ -47,7 +47,7 @@ const overviewItems: AnalysisOverviewItem[] = [
     icon: SvgBellIcon,
     title: '全国排名',
     totalTitle: '同省排名',
-    totalValue: 5000,
+    totalValue: 50,
     value: 1280,
   },
 ];

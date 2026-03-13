@@ -1,157 +1,89 @@
-<div align="center">
-  <a href="https://github.com/anncwb/vue-vben-admin">
-    <img alt="VbenAdmin Logo" width="215" src="https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp">
-  </a>
-  <br>
-  <br>
+## 🌟 项目简介
 
-[![license](https://img.shields.io/github/license/anncwb/vue-vben-admin.svg)](LICENSE)
+本项目由 **海底一队** 开发，是在开源框架 [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin) 基础上深度定制的智慧英语教育系统。通过集成 Gemini AI 大模型与大数据可视化技术，我们为英语学习者提供从**作文批改、词汇测评、备考规划**到**在线交互学习**的全链路支撑。
 
-  <h1>Vue Vben Admin</h1>
-</div>
+### 🚀 海底一队定制功能
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vbenjs_vue-vben-admin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vbenjs_vue-vben-admin) [![codeql](https://github.com/vbenjs/vue-vben-admin/actions/workflows/codeql.yml/badge.svg)](https://github.com/vbenjs/vue-vben-admin/actions/workflows/codeql.yml) [![build](https://github.com/vbenjs/vue-vben-admin/actions/workflows/build.yml/badge.svg)](https://github.com/vbenjs/vue-vben-admin/actions/workflows/build.yml) [![ci](https://github.com/vbenjs/vue-vben-admin/actions/workflows/ci.yml/badge.svg)](https://github.com/vbenjs/vue-vben-admin/actions/workflows/ci.yml) [![deploy](https://github.com/vbenjs/vue-vben-admin/actions/workflows/deploy.yml/badge.svg)](https://github.com/vbenjs/vue-vben-admin/actions/workflows/deploy.yml)
+- **学情分析大屏**：重写了 Dashboard 模块，引入核心能力雷达图与学习热力图。
+- **AI 作文深度批改**：集成 OCR 识别，支持衡水体视觉纠偏与多维语义评分。
+- **局部打卡交互逻辑**：在工作台（Workbench）实现了无跳转的原地词汇回顾功能。
+- **智能备考引擎**：基于动态路由与 Pinia 状态管理实现的个性化备考周期规划。
 
-**English** | [中文](./README.zh-CN.md) | [日本語](./README.ja-JP.md)
+------
 
-## Introduction
+## 🛠️ 源码使用指南
 
-Vue Vben Admin is a free and open source middle and back-end template. Using the latest `vue3`, `vite`, `TypeScript` and other mainstream technology development, the out-of-the-box middle and back-end front-end solutions can also be used for learning reference.
+### 1. 环境准备
 
-## Upgrade Notice
+- **Node.js**: `18.12.0` 或 `20.0.0`
+- **pnpm**: `8.1.0`
+- **IDE**: VS Code (推荐安装插件: Vben Admin Extension, Volar)
 
-This is the latest version, 5.0, and it is not compatible with previous versions. If you are starting a new project, it is recommended to use the latest version. If you wish to view the old version, please use the [v2 branch](https://github.com/vbenjs/vue-vben-admin/tree/v2).
+### 2. 快速启动
 
-## Features
+Bash
 
-- **Latest Technology Stack**: Developed with cutting-edge front-end technologies like Vue 3 and Vite
-- **TypeScript**: A language for application-scale JavaScript
-- **Themes**: Multiple theme colors available with customizable options
-- **Internationalization**: Comprehensive built-in internationalization support
-- **Permissions**: Built-in solution for dynamic route-based permission generation
-
-## Preview
-
-- [Vben Admin](https://vben.pro/) - Full version Chinese site
-
-Test Account: vben/123456
-
-<div align="center">
-  <img alt="VbenAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview1.png">
-  <img alt="VbenAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview2.png">
-  <img alt="VbenAdmin Logo" width="100%" src="https://anncwb.github.io/anncwb/images/preview3.png">
-</div>
-
-### Use Gitpod
-
-Open the project in Gitpod (free online dev environment for GitHub) and start coding immediately.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vbenjs/vue-vben-admin)
-
-## Documentation
-
-[Document](https://doc.vben.pro/)
-
-## Install and Use
-
-1. Get the project code
-
-```bash
-git clone https://github.com/vbenjs/vue-vben-admin.git
 ```
+# 克隆仓库
+git clone https://github.com/EveningFreeze/vue-vben-admin.git
 
-2. Install dependencies
-
-```bash
-cd vue-vben-admin
-npm i -g corepack
+# 安装依赖 (Vben 推荐使用 pnpm)
 pnpm install
-```
 
-3. Run
+# 配置环境变量
+# 请在 .env.development 中配置你的 Gemini API Key 或 后端接口地址
+VITE_GLOB_API_URL=/api
 
-```bash
+# 运行项目
 pnpm dev
 ```
 
-4. Build
+### 3. 项目打包
 
-```bash
+Bash
+
+```
+# 构建生产环境
 pnpm build
 ```
 
-## Change Log
+------
 
-[CHANGELOG](https://github.com/vbenjs/vue-vben-admin/releases)
+## 🏗️ 二次开发文档 (Vben 规范)
 
-## How to Contribute
+### 1. 业务代码目录说明
 
-You are very welcome to join! [Raise an issue](https://github.com/anncwb/vue-vben-admin/issues/new/choose) or submit a Pull Request.
+我们将业务逻辑高度解耦，主要开发位于以下路径：
 
-**Pull Request Process:**
+- `src/views/english-learning/`: **核心业务**。包含作文批改（Essay）、词汇测评（Quiz）、备考规划（Report）等页面。
+- `src/views/dashboard/workspace/`: **工作台中枢**。定制化了用户打卡逻辑与模块预览。
+- `src/components/English/`: **业务组件**。封装了单词卡片、AI 聊天框等通用 UI。
 
-1. Fork the code
-2. Create your branch: `git checkout -b feat/xxxx`
-3. Submit your changes: `git commit -am 'feat(function): add xxxxx'`
-4. Push your branch: `git push origin feat/xxxx`
-5. Submit `pull request`
+### 2. 如何添加新功能模块
 
-## Git Contribution Submission Specification
+1. **定义路由**：在 `src/router/routes/modules/english.ts` 中添加新的路由配置。
+2. **创建页面**：在 `src/views/english-learning/` 下新建文件夹，利用 Vben 提供的 `PageWrapper` 组件包裹页面，保持 UI 风格统一。
+3. **状态管理**：复杂的学习进度逻辑请在 `src/store/modules/english.ts` 中维护。
 
-Reference [vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) specification ([Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular))
+### 3. 调用 AI 接口说明
 
-- `feat` Add new features
-- `fix` Fix the problem/BUG
-- `style` The code style is related and does not affect the running result
-- `perf` Optimization/performance improvement
-- `refactor` Refactor
-- `revert` Undo edit
-- `test` Test related
-- `docs` Documentation/notes
-- `chore` Dependency update/scaffolding configuration modification etc.
-- `ci` Continuous integration
-- `types` Type definition file changes
+项目在 `src/api/` 下新增了 `aiService.ts`。
 
-## Browser Support
+- **作文批改**：调用 `postEssayReview` 接口，传入 OCR 识别后的文本或 Base64 图片。
+- **语法答疑**：利用 `useSSE` (Server-Sent Events) 或标准 API 实现与 Gemini 的流式交互。
 
-The `Chrome 80+` browser is recommended for local development
+### 4. 样式规范
 
-Support modern browsers, not IE
+- 遵循 Vben 的 **Tailwind CSS** 优先原则。
+- 主题色修改请查阅 `build/config/themeConfig.ts` 或使用页面右侧的配置面板。
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| :-: | :-: | :-: | :-: |
-| last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+------
 
-## Maintainer
+## 🤝 团队信息
 
-[@Vben](https://github.com/anncwb)
+- **开发团队**: 海底一队 
+- **技术栈**: Vue 3 + TypeScript + Ant Design Vue + Gemini AI
+- **致谢**: 感谢 `vue-vben-admin` 提供的优秀企业级后台架构。
 
-## Star History
+------
 
-[![Star History Chart](https://api.star-history.com/svg?repos=vbenjs/vue-vben-admin&type=Date)](https://star-history.com/#vbenjs/vue-vben-admin&Date)
-
-## Donate
-
-If you think this project is helpful to you, you can help the author buy a cup of coffee to show your support!
-
-![donate](https://unpkg.com/@vbenjs/static-source@0.1.7/source/sponsor.png)
-
-<a style="display: block;width: 100px;height: 50px;line-height: 50px; color: #fff;text-align: center; background: #408aee;border-radius: 4px;" href="https://www.paypal.com/paypalme/cvvben">Paypal Me</a>
-
-## Contributors
-
-<a href="https://openomy.app/github/vbenjs/vue-vben-admin" target="_blank" style="display: block; width: 100%;" align="center">
-  <img src="https://openomy.app/svg?repo=vbenjs/vue-vben-admin&chart=bubble&latestMonth=3" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" />
- </a>
-
-<a href="https://github.com/vbenjs/vue-vben-admin/graphs/contributors">
-  <img alt="Contributors" src="https://contrib.rocks/image?repo=vbenjs/vue-vben-admin" />
-</a>
-
-## Discord
-
-- [Github Discussions](https://github.com/anncwb/vue-vben-admin/discussions)
-
-## License
-
-[MIT © Vben-2020](./LICENSE)

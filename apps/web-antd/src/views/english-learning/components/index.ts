@@ -1,0 +1,12 @@
+export { default as PronunciationBtn } from './PronunciationBtn.vue';
+export { default as DailyCheckIn } from './DailyCheckIn.vue';
+export { default as XpBar } from './XpBar.vue';
+export { default as StudyStatsCard } from './StudyStatsCard.vue';
+export { default as AchievementCard } from './AchievementCard.vue';
+export { default as StreakCalendar } from './StreakCalendar.vue';
+export { default as DictionaryLookup } from './DictionaryLookup.vue';
+export { default as LeaderboardMini } from './LeaderboardMini.vue';
+export { default as EnglishPageLayout } from './EnglishPageLayout.vue';
+export { default as EnglishHero } from './EnglishHero.vue';
+export { default as EnglishCard } from './EnglishCard.vue';
+export { default as EnglishGlassPanel } from './EnglishGlassPanel.vue';

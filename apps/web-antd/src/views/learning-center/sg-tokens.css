@@ -1,0 +1,17 @@
+/* Suguard Platform Design Tokens - Dark Cool Blue */
+@theme inline {
+  --color-sg-primary: #3b82f6;
+  --color-sg-primary-50: #0f172a;
+  --color-sg-primary-100: #1e293b;
+  --color-sg-primary-200: #334155;
+  --color-sg-primary-500: #3b82f6;
+  --color-sg-primary-600: #2563eb;
+  --color-sg-primary-700: #1d4ed8;
+  --color-sg-accent: #2563eb;
+  --color-sg-accent-50: #172554;
+  --color-sg-accent-500: #2563eb;
+  --color-sg-accent-600: #1d4ed8;
+  --color-sg-accent-700: #1e40af;
+  --color-sg-surface: #18181B;
+  --color-sg-surface-dark: #09090B;
+}

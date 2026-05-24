@@ -1,0 +1,26 @@
+/* English Module Design Tokens - Dark Cool Blue Palette */
+
+@theme inline {
+  --color-en-50: #09090b;
+  --color-en-100: #18181b;
+  --color-en-200: #27272a;
+  --color-en-300: #3f3f46;
+  --color-en-400: #52525b;
+  --color-en-500: #3b82f6;
+  --color-en-600: #2563eb;
+  --color-en-700: #1d4ed8;
+  --color-en-800: #e4e4e7;
+  --color-en-900: #f4f4f5;
+  --color-en-cyan-50: #0f172a;
+  --color-en-cyan-100: #1e293b;
+  --color-en-cyan-200: #334155;
+  --color-en-cyan-300: #475569;
+  --color-en-cyan-400: #64748b;
+  --color-en-cyan-500: #3b82f6;
+  --color-en-cyan-600: #2563eb;
+  --color-en-cyan-700: #1d4ed8;
+  --shadow-en-card: 0 8px 30px rgb(0 0 0 / 0.35);
+  --shadow-en-card-hover: 0 12px 40px rgb(0 0 0 / 0.5);
+  --shadow-en-card-dark: 0 8px 30px rgb(0 0 0 / 0.6);
+  --shadow-en-glow: 0 0 24px rgba(59, 130, 246, 0.3);
+}

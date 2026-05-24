@@ -10,83 +10,69 @@ const { renderEcharts } = useEcharts(chartRef);
 
 onMounted(() => {
   renderEcharts({
-    grid: {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'cross' },
+    },
+    legend: {
+      data: ['词汇练习', '作文批改', '听力训练', '语法练习'],
       bottom: 0,
+      textStyle: { fontSize: 10 },
+    },
+    grid: {
+      bottom: 30,
       containLabel: true,
       left: '1%',
-      right: '1%',
-      top: '2 %',
+      right: '4%',
+      top: '2%',
     },
-    series: [
-      {
-        areaStyle: {},
-        data: [
-          111, 2000, 6000, 16_000, 33_333, 55_555, 64_000, 33_333, 18_000,
-          36_000, 70_000, 42_444, 23_222, 13_000, 8000, 4000, 1200, 333, 222,
-          111,
-        ],
-        itemStyle: {
-          color: '#5ab1ef',
-        },
-        smooth: true,
-        type: 'line',
-      },
-      {
-        areaStyle: {},
-        data: [
-          33, 66, 88, 333, 3333, 6200, 20_000, 3000, 1200, 13_000, 22_000,
-          11_000, 2221, 1201, 390, 198, 60, 30, 22, 11,
-        ],
-        itemStyle: {
-          color: '#019680',
-        },
-        smooth: true,
-        type: 'line',
-      },
-    ],
-    tooltip: {
-      axisPointer: {
-        lineStyle: {
-          color: '#019680',
-          width: 1,
-        },
-      },
-      trigger: 'axis',
-    },
-    // xAxis: {
-    //   axisTick: {
-    //     show: false,
-    //   },
-    //   boundaryGap: false,
-    //   data: Array.from({ length: 18 }).map((_item, index) => `${index + 6}:00`),
-    //   type: 'category',
-    // },
     xAxis: {
-      axisTick: {
-        show: false,
-      },
+      axisTick: { show: false },
       boundaryGap: false,
       data: Array.from({ length: 18 }).map((_item, index) => `${index + 6}:00`),
-      splitLine: {
-        lineStyle: {
-          type: 'solid',
-          width: 1,
-        },
-        show: true,
-      },
+      splitLine: { lineStyle: { type: 'dashed' }, show: true },
       type: 'category',
     },
-    yAxis: [
+    yAxis: [{
+      axisTick: { show: false },
+      max: 80,
+      splitArea: { show: true },
+      splitNumber: 4,
+      type: 'value',
+      name: '活跃度 (次)',
+    }],
+    series: [
       {
-        axisTick: {
-          show: false,
-        },
-        max: 80_000,
-        splitArea: {
-          show: true,
-        },
-        splitNumber: 4,
-        type: 'value',
+        name: '词汇练习',
+        areaStyle: { opacity: 0.15 },
+        data: [5, 12, 25, 30, 42, 55, 48, 38, 22, 15, 10, 8, 5, 3, 2, 1, 0, 0],
+        itemStyle: { color: '#5ab1ef' },
+        smooth: true,
+        type: 'line',
+      },
+      {
+        name: '作文批改',
+        areaStyle: { opacity: 0.15 },
+        data: [0, 1, 3, 8, 15, 22, 30, 25, 18, 12, 8, 5, 3, 2, 1, 0, 0, 0],
+        itemStyle: { color: '#b6a2de' },
+        smooth: true,
+        type: 'line',
+      },
+      {
+        name: '听力训练',
+        areaStyle: { opacity: 0.15 },
+        data: [0, 2, 5, 10, 18, 28, 35, 40, 30, 20, 12, 8, 5, 4, 2, 1, 0, 0],
+        itemStyle: { color: '#f59e0b' },
+        smooth: true,
+        type: 'line',
+      },
+      {
+        name: '语法练习',
+        areaStyle: { opacity: 0.15 },
+        data: [2, 8, 15, 25, 35, 40, 32, 20, 15, 10, 8, 5, 3, 2, 1, 0, 0, 0],
+        itemStyle: { color: '#10b981' },
+        smooth: true,
+        type: 'line',
       },
     ],
   });

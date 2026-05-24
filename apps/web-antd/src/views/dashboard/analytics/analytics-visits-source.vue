@@ -10,9 +10,11 @@ const { renderEcharts } = useEcharts(chartRef);
 
 onMounted(() => {
   renderEcharts({
+    color: ['#5ab1ef', '#b6a2de', '#67e0e3', '#f59e0b', '#10b981', '#ef4444'],
     legend: {
       bottom: '2%',
       left: 'center',
+      textStyle: { fontSize: 9 },
     },
     series: [
       {
@@ -22,14 +24,15 @@ onMounted(() => {
         animationEasing: 'exponentialInOut',
         animationType: 'scale',
         avoidLabelOverlap: false,
-        color: ['#5ab1ef', '#b6a2de', '#67e0e3', '#2ec7c9'],
         data: [
           { name: '作文批改', value: 1048 },
           { name: '词汇背诵', value: 735 },
           { name: '真题阅读', value: 580 },
-          { name: '听力磨耳朵', value: 484 },
+          { name: '听力训练', value: 484 },
+          { name: '语法专项', value: 320 },
+          { name: '口语练习', value: 210 },
         ],
-        name:'学习时长分布',
+        name: '学习时长分布',
         emphasis: {
           label: {
             fontSize: '12',
@@ -38,7 +41,6 @@ onMounted(() => {
           },
         },
         itemStyle: {
-          // borderColor: '#fff',
           borderRadius: 10,
           borderWidth: 2,
         },
@@ -49,13 +51,13 @@ onMounted(() => {
         labelLine: {
           show: false,
         },
-        name: '访问来源',
-        radius: ['40%', '65%'],
+        radius: ['35%', '65%'],
         type: 'pie',
       },
     ],
     tooltip: {
       trigger: 'item',
+      formatter: '{b}: {c} min ({d}%)',
     },
   });
 });

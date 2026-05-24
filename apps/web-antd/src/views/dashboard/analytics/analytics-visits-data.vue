@@ -13,30 +13,20 @@ onMounted(() => {
     legend: {
       bottom: 0,
       data: ['目标水平', '当前水平'],
+      textStyle: { fontSize: 10 },
     },
     radar: {
       indicator: [
-        {
-          name: '词汇储备',
-        },
-        {
-          name: '语法运用',
-        },
-        {
-          name: '听力理解',
-        },
-        {
-          name: '阅读速度',
-        },
-        {
-          name: '写作逻辑',
-        },
-        {
-          name: '口语流利',
-        },
+        { name: '词汇储备', max: 100 },
+        { name: '语法运用', max: 100 },
+        { name: '听力理解', max: 100 },
+        { name: '阅读速度', max: 100 },
+        { name: '写作逻辑', max: 100 },
+        { name: '口语流利', max: 100 },
       ],
       radius: '60%',
-      splitNumber:5,
+      splitNumber: 5,
+      axisName: { fontSize: 10 },
     },
     series: [
       {
@@ -49,22 +39,17 @@ onMounted(() => {
         },
         data: [
           {
-            itemStyle: {
-              color: '#b6a2de',
-            },
+            itemStyle: { color: '#b6a2de' },
             name: '目标水平',
             value: [95, 90, 95, 90, 90, 85],
           },
           {
-            itemStyle: {
-              color: '#5ab1ef',
-            },
+            itemStyle: { color: '#5ab1ef' },
             name: '当前水平',
             value: [85, 72, 90, 65, 80, 55],
           },
         ],
         itemStyle: {
-          // borderColor: '#fff',
           borderRadius: 10,
           borderWidth: 2,
         },

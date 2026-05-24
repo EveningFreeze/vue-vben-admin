@@ -1,5 +1,4 @@
 import type { RouteRecordRaw } from 'vue-router';
-import { $t } from '#/locales';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -12,6 +11,15 @@ const routes: RouteRecordRaw[] = [
     name: 'Education',
     path: '/english-learning',
     children: [
+      {
+        meta: {
+          title: '学习中心',
+          icon: 'ant-design:home-outlined',
+        },
+        name: 'EnglishHub',
+        path: '/english-learning',
+        component: () => import('#/views/english-learning/index.vue'),
+      },
       {
         meta: {
           title: '英语作文评分',
@@ -47,6 +55,54 @@ const routes: RouteRecordRaw[] = [
         name: 'Online-study',
         path: '/english-learning/study',
         component: () => import('#/views/english-learning/study/index.vue'),
+      },
+      {
+        meta: {
+          title: '听力训练',
+          icon: 'ant-design:audio-outlined',
+        },
+        name: 'Listening',
+        path: '/english-learning/listening',
+        component: () => import('#/views/english-learning/listening/index.vue'),
+      },
+      {
+        meta: {
+          title: 'AI语伴',
+          icon: 'ant-design:customer-service-outlined',
+        },
+        name: 'AiPartner',
+        path: '/english-learning/ai-partner',
+        component: () => import('#/views/english-learning/ai-partner/index.vue'),
+      },
+      {
+        meta: {
+          title: '高频考点',
+          icon: 'ant-design:star-outlined',
+        },
+        name: 'ExamPoints',
+        path: '/english-learning/exam-points',
+        component: () => import('#/views/english-learning/exam-points/index.vue'),
+      },
+      {
+        meta: {
+          title: '英语论坛',
+          icon: 'ant-design:message-outlined',
+        },
+        name: 'Forum',
+        path: '/english-learning/forum',
+        component: () => import('#/views/english-learning/forum/index.vue'),
+      },
+      {
+        meta: { title: '学习诊断', icon: 'ant-design:medicine-box-outlined' },
+        name: 'EnDiagnosis',
+        path: '/english-learning/diagnosis',
+        component: () => import('#/views/english-learning/diagnosis/index.vue'),
+      },
+      {
+        meta: { title: '文献阅读', icon: 'ant-design:file-search-outlined' },
+        name: 'ResearchReading',
+        path: '/english-learning/research-reading',
+        component: () => import('#/views/english-learning/research-reading/index.vue'),
       },
     ],
   },

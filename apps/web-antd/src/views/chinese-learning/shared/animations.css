@@ -1,0 +1,147 @@
+@import '../design/chinese-layout.css';
+
+/* ===== Shared Animation & Visual Utilities ===== */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-scale-in {
+  animation: scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.35s ease-out forwards;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(8px); }
+}
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-16px) translateX(-10px); }
+  66% { transform: translateY(-32px) translateX(6px); }
+}
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-18px) translateX(-8px); }
+  75% { transform: translateY(-10px) translateX(12px); }
+}
+.animate-float-1 { animation: float-1 6s ease-in-out infinite; }
+.animate-float-2 { animation: float-2 8s ease-in-out infinite; }
+.animate-float-3 { animation: float-3 10s ease-in-out infinite; }
+
+.delay-0 { animation-delay: 0ms; }
+.delay-1 { animation-delay: 80ms; }
+.delay-2 { animation-delay: 160ms; }
+.delay-3 { animation-delay: 240ms; }
+.delay-4 { animation-delay: 320ms; }
+.delay-5 { animation-delay: 400ms; }
+.delay-6 { animation-delay: 480ms; }
+.delay-7 { animation-delay: 560ms; }
+.delay-8 { animation-delay: 640ms; }
+.delay-9 { animation-delay: 720ms; }
+.delay-10 { animation-delay: 800ms; }
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.dark .glass-effect {
+  background: rgba(24, 24, 27, 0.7);
+}
+
+.card-lift {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.dark .card-lift:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+/* === Phase 4: Motion System === */
+
+/* Shimmer — gradient scan effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.15) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(139,92,246,0.2); }
+  50% { box-shadow: 0 0 24px rgba(139,92,246,0.4); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* XP float — used for +XP toast notifications */
+@keyframes xp-float {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-48px) scale(1.2); }
+}
+.animate-xp-float {
+  animation: xp-float 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+/* Entrance system — unified staggered entry */
+@keyframes entrance-item {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-entrance {
+  animation: entrance-item 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-entrance[data-delay="0"] { animation-delay: 0ms; }
+.animate-entrance[data-delay="1"] { animation-delay: 60ms; }
+.animate-entrance[data-delay="2"] { animation-delay: 120ms; }
+.animate-entrance[data-delay="3"] { animation-delay: 180ms; }
+.animate-entrance[data-delay="4"] { animation-delay: 240ms; }
+.animate-entrance[data-delay="5"] { animation-delay: 300ms; }
+.animate-entrance[data-delay="6"] { animation-delay: 360ms; }
+.animate-entrance[data-delay="7"] { animation-delay: 420ms; }
+.animate-entrance[data-delay="8"] { animation-delay: 480ms; }
+.animate-entrance[data-delay="9"] { animation-delay: 540ms; }
+.animate-entrance[data-delay="10"] { animation-delay: 600ms; }
+
+/* Number count-up */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-count-up {
+  animation: count-up 0.3s ease-out forwards;
+}
+
+/* Hover lift with glow */
+.hover-lift-glow {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.15);
+}

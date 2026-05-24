@@ -1,0 +1,27 @@
+/* Chinese Module Design Tokens - Dark Purple + Gold Palette */
+
+@theme inline {
+  --color-chinese-50: #09090b;
+  --color-chinese-100: #18181b;
+  --color-chinese-200: #27272a;
+  --color-chinese-300: #3f3f46;
+  --color-chinese-400: #52525b;
+  --color-chinese-500: #8b5cf6;
+  --color-chinese-600: #7c3aed;
+  --color-chinese-700: #6d28d9;
+  --color-chinese-800: #e4e4e7;
+  --color-chinese-900: #f4f4f5;
+  --color-chinese-gold-50: #1c1917;
+  --color-chinese-gold-100: #292524;
+  --color-chinese-gold-200: #44403c;
+  --color-chinese-gold-300: #57534e;
+  --color-chinese-gold-400: #78716c;
+  --color-chinese-gold-500: #a16207;
+  --color-chinese-gold-600: #ca8a04;
+  --color-chinese-gold-700: #eab308;
+  --color-chinese-paper: #2A2520;
+  --color-chinese-paper-dark: #1A1714;
+  --shadow-chinese-card: 0 8px 30px rgb(0 0 0 / 0.35);
+  --shadow-chinese-card-hover: 0 12px 40px rgb(0 0 0 / 0.5);
+  --shadow-chinese-card-dark: 0 8px 30px rgb(0 0 0 / 0.6);
+}
